@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Отчёт по работе Робота</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet" />
+  </head>
+  <body>
+    <h2>Отчёт по работе Робота</h2>
+    <table>
+      <tr>
+        <th>ID робота</th>
+        <th>Начало отсчета</th>
+        <th>Время старта</th>
+        <th>Время остановки</th>
+      </tr>
+      {% for robot in robots %}
+      <tr>
+        <td>{{ robot.id }}</td>
+        <td>{{ robot.start_with }}</td>
+        <td>{{ robot.created_at }}</td>
+        <td>{{ robot.stope_at }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
